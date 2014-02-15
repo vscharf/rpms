@@ -192,7 +192,7 @@ gmond/gmond -t | %{__perl} -pe 's|nobody|ganglia|g' > %{buildroot}%{_sysconfdir}
 ## Install binaries
 %{__make} install DESTDIR="%{buildroot}"
 ## House cleaning
-%{__rm} -f ${buildroot}%{_datadir}/ganglia/{Makefile.am,version.php.in}
+%{__rm} -f %{buildroot}%{_datadir}/ganglia/{Makefile.am,version.php.in}
 
 %clean
 %{__rm} -rf %{buildroot}
