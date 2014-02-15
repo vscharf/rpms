@@ -3,7 +3,7 @@
 Summary: Ganglia Distributed Monitoring System
 Name: ganglia
 Version: 3.1.7
-Release: 3%{?dist}
+Release: 4%{?dist}
 License: BSD
 Group: Applications/Internet
 URL: http://ganglia.sourceforge.net/
@@ -14,6 +14,7 @@ Source0: http://dl.sf.net/project/ganglia/ganglia%20monitoring%20core/%{version}
 Patch0: diskusage-pcre.patch
 Patch1: setuserid-fix.patch
 Patch2: diskmetrics.patch
+Patch3: gmond-dmax.patch
 Buildroot: %{_tmppath}/%{name}-%{version}-%{release}-root
 
 BuildRequires: apr-devel >= 1
@@ -103,6 +104,7 @@ programmers can use to build scalable cluster or grid applications
 %patch0 -p1
 %patch1 -p1
 %patch2 -p1
+%patch3 -p1
 ## Hey, those shouldn't be executable...
 chmod -x lib/*.{h,x}
 
